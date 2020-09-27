@@ -1,0 +1,319 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Manifest Library</title>
+        <style>
+        body {
+            font-family: "Helvetica", sans-serif;
+            background-color: rgb(93 62 123);
+            color: white;
+        }
+        .box {
+            width: 400px;
+            background: rgb(123 97 149);
+            color: rgb(47 18 75);
+            border: 1px solid;
+            border-top: 8px solid;
+            padding-left:6px;
+            padding-bottom: 6px;
+        }
+        .box p {
+            color: white;
+        }
+        .box li {
+            color: white;
+        }
+        .box label {
+            color: white;
+        }
+        .small {
+            width: 200px;
+        }
+        #word-finder-box {
+            background: rgb(161, 141, 180);
+            color: white;
+        }
+        #word-deleter-box {
+            background: rgb(161, 141, 180);
+            color: white;
+        }
+        #word-adder-box {
+            background: rgb(161, 141, 180);
+        }
+        #button-finder {
+            background: rgb(161 141 180);
+            color: white;
+        }
+        #button-adder {
+            background: rgb(161 141 180);
+            color: white;
+        }
+        #button-deleter {
+            background: rgb(161 141 180);
+            color: white;
+        }
+        .box-title {
+            margin-bottom: 0px;
+        }
+        #word-adder {
+            margin-left: 10px;
+            float: left;
+            width: 300px;
+        }
+        #word-finder {
+            float: left;
+        }
+        .input-box {
+            background: rgb(161, 141, 180);
+            color: white;
+        }
+        #word-adder-box {
+            background: rgb(123 97 149);
+            width: 241px;
+        }
+        #words-listo {
+            margin-bottom: 15px;
+        }
+        #words-lister {
+            height: 175px;
+            overflow: auto;
+        }
+        #words-list-all {
+            margin-top: -20px;
+        }
+        #button-code {
+            background: rgb(161, 141, 180);
+            color: white;
+        }
+        #code-title {
+            margin-bottom: 0px;
+            margin-top: 0px;
+        }
+        #code {
+            background: rgb(71, 40, 103);
+            padding-left: 10px;
+            padding-top: 10px;
+            padding-bottom: 10px;
+        }
+        #code-insert {
+            background: rgb(161, 141, 180);
+            color: white;
+        }
+        #word-deleter-textbox {
+            width: 210px;
+        }
+        #word-deleter {
+            margin-top: 258px;
+            position: relative;
+            top: -25px;
+        }
+        a {
+            text-decoration: none;
+            
+        }
+        a:link {
+            color: white;
+        }
+        a:visited {
+            color: white;
+        }
+        a:hover { 
+            background-color: none;
+        }  
+        a:active {
+            background-color: none;
+        } 
+        a:focus {
+            background-color: none;
+        } 
+        
+        </style>
+    </head>
+    <body>
+    <!--<><><><><><><><><><><><><><><><><><><><>-->
+    <h1>Manifest Library</h1>
+    <h2 class = "box-title">How to use</h2>
+    <div class = "box">
+    <p>The Manifest language is a secret sign language designed to be both extremely fast to use, and subtle.
+    <br><br>When "talking", you:
+    </p>
+    <ul>
+        <li>Don't care about your hands' or arms' positions.
+        <li>Use your left hand to identify the kind of word(person, verb, adjective, place, etc.)
+        <li>Use your right hand to identify the actual word.
+        <li>May make multiple signs to make 1 word. (roots, suffix, affix, etc.)
+    </ul>
+    </div>
+    <!--<><><><><><><><><><><><><><><><><><><><>-->
+    <div id = "word-finder">
+    <h2 class = "box-title">Word finder</h2>
+    <div class = "box small">
+    <p>Put in letters to find words that start on that. Clear to list all words in alphabetical order
+    </p>
+    <label>
+    <input id="word-finder-box" type="text">
+    </label>
+    <button id="button-finder" type="button"><a href="#list-href">Find!</a></button>
+    </div>
+    </div>
+    <!--<><><><><><><><><><><><><><><><><><><><>-->
+    <div id = "word-adder">
+    <h2 class = "box-title">Word Adder</h2>
+    <div class = "box small" id= "word-adder-box">
+    <p>1st box: fingers' positons in order.<br>
+    2st box: Name of word.<br>
+    3st box: Word PofS.<br>
+    4st box: Word meaning.<br>
+    </p>
+    <label>
+    <input id="word-adder-box-fingers" class="input-box" type="text">
+    <input id="word-adder-box-name" class="input-box" type="text">
+    <input id="word-adder-box-type" class="input-box" type="text">
+    <input id="word-adder-box-meaning" class="input-box" type="text">
+    </label>
+    <button id="button-adder" type="button">Add!</button>
+    </div>
+    </div>
+    <!--<><><><><><><><><><><><><><><><><><><><>-->
+    <div id = "word-deleter">
+    <h2 class = "box-title">Word Deleter</h2>
+    <div class = "box small" id = "word-deleter-textbox">
+    <p>Put in the <strong>exact</strong> word to delete it.
+    </p>
+    <label>
+    <input id="word-deleter-box" type="text">
+    </label>
+    <button id="button-deleter" type="button">Delete!</button>
+    </div>
+    </div>
+    <!--<><><><><><><><><><><><><><><><><><><><>-->
+    <div id = "words-list-all">
+    <h2>Words List</h2>
+    <div class = "box" id= "words-listo">
+    <p id= "words-lister">
+        
+    </p>
+    </div>
+    </div>
+    <!--<><><><><><><><><><><><><><><><><><><><>-->
+    <div id= "code">
+    <h3 id= "code-title">Words list code</h3>
+    <button id="button-code" type="button">Make Code/Put in Code</button>
+    <label>
+    <input id="code-insert" type="text">List code insert
+    </label>
+    </div>
+    <div id = "list-href"></div>
+    <!--<><><><><><><><><><><><><><><><><><><><>-->
+    <script>
+    var POSList = {
+        Object: 11144,
+        Verb: 11144,
+        Place: 11144,
+        Idea: 11144,
+        Pronoun: 11144,
+        Adjective: 11144,
+        Adverb: 11144,
+        Preposition: 11144,
+        Interjection: 11144,
+        Article: 11144,
+        Numeral: 11144,
+        AliveThing: 11144,
+        Name: 11144,
+    }
+    var wordsList = [{
+        fPos: 12343,
+        wName: "Goop",
+        POS: "Object",
+        wMean: "Gelatinous Fluid"
+    }, {
+        fPos: 13343,
+        wName: "Boop",
+        POS: "Verb",
+        wMean: "To bop"
+    }];
+    
+    var addWord = function(fPos, wName, POS, wMean) {
+        wordsList.push({
+        
+        fPos: fPos,
+        wName: wName,
+        POS: POS,
+        wMean: wMean
+        
+        });
+        wordsList.sort();
+    }
+    
+    var findWord = function(letters) {
+        var wordFinderList = [];
+        for(var t = 0; t<wordsList.length; t+=1) {
+        if(wordsList[t].wName.startsWith(letters) === true){
+            wordFinderList.push(wordsList[t]);
+        }
+        }
+        return(wordFinderList);
+    }
+    
+    var wordLister = function(words) {
+        var list = document.getElementById("words-lister");
+        var changeList = "";
+        var makePart = function(thing) {
+        var preList = "";
+        preList = ':  Finger Postition is "' + thing.fPos + '" and the Part of Speech is "' + thing.POS + '" and means: ' + thing.wMean;
+        changeList += (thing.wName.big() + preList.small()+"<br><br>");
+        }
+        for(var t = 0; t < words.length; t+=1) {
+        makePart(words[t]);
+        }
+        list.innerHTML = changeList;
+    }
+    
+    var wordDeleter = function(deleteWord) {
+        function checkString(thing) {
+        return thing.wName !== deleteWord;
+        }
+        wordsList = wordsList.filter(checkString);
+    }
+    
+    var buttonFinder = document.getElementById("button-finder");
+    var buttonAdder = document.getElementById("button-adder");
+    var buttonCoder = document.getElementById("button-code");
+    
+    var buttonDeleter = document.getElementById("button-deleter");
+    
+    var onButtonClickF = function() {
+    var wordF = document.getElementById("word-finder-box").value;
+    wordLister(findWord(wordF));
+    }
+    var onButtonClickA = function() {
+    var wordAA = document.getElementById("word-adder-box-fingers").value;
+    var wordAB = document.getElementById("word-adder-box-name").value;
+    var wordAC = document.getElementById("word-adder-box-type").value;
+    var wordAD = document.getElementById("word-adder-box-meaning").value;
+    addWord(wordAA, wordAB, wordAC, wordAD);
+    }
+    var onButtonClickC = function() {
+    var wordC = document.getElementById("code-insert").value;
+    }
+    var onButtonClickD = function() {
+    var wordD = document.getElementById("word-deleter-box").value;
+    wordDeleter(wordD);
+    }
+    
+    //word-deleter-box
+    
+    buttonFinder.addEventListener("click", onButtonClickF);
+    
+    buttonAdder.addEventListener("click", onButtonClickA);
+    
+    buttonCoder.addEventListener("click", onButtonClickC);
+    
+    buttonDeleter.addEventListener("click", onButtonClickD);
+    
+    //}Buttons
+    
+    </script>
+    </body>
+</html>
